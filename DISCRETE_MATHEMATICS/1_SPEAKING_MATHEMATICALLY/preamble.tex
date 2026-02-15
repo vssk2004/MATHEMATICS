@@ -1,0 +1,48 @@
+\usepackage[english]{babel}				    % Set language
+\usepackage[utf8x]{inputenc}			    % Set encoding
+\usepackage{graphicx}					        % For including figures
+\usepackage{booktabs}					        % For table rules
+\usepackage{hyperref}					        % For cross-referencing
+\usepackage{tikz}                     % For diagrams using TikZ
+\usepackage{amsmath}                  % For math equations
+\usepackage{amssymb}                  % For math symbols
+\setlength{\parskip}{1.5ex}           % Spacing
+
+
+\mode<presentation>						              % Set options
+{
+  \usetheme{default}					              % Set theme
+  \usecolortheme{default} 				          % Set colors
+  \usefonttheme{default}  				          % Set font theme
+  \setbeamertemplate{caption}[numbered]	    % Set caption to be numbered
+}
+
+
+
+% Uncomment this to have the outline at the beginning of each section highlighted.
+\AtBeginSection[]{
+  \begin{frame}{Topic}
+    \tableofcontents[
+      currentsection,
+      hideallsubsections
+    ]
+  \end{frame}
+}
+
+\AtBeginSubsection[]{
+  \begin{frame}{Subtopic}
+    \tableofcontents[
+      sections=\thesection,
+      currentsubsection
+    ]
+  \end{frame}
+}
+
+
+
+%================================
+% MACROS
+%================================
+\newcommand{\slide}[2]{\begin{frame}{#1}{}#2\end{frame}}
+\newcommand{\dfn}[1]{\begin{block}{Definition}{}#1\end{block}}
+\newcommand{\thm}[1]{\begin{block}{Theorem}{}#1\end{block}}

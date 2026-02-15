@@ -1,0 +1,201 @@
+\section{Variables}
+
+
+\subsection{Variables}
+
+\slide{Variables}{
+    In mathematics, a variable is used as a placeholder when referring to something that:
+    \begin{enumerate}
+        \item has one or more possible values, but we do not know what they are
+        \item is meant to be equally true for all elements in a given set, and so you don't want to be
+        restricted to considering only a particular value.
+    \end{enumerate}
+
+    It is important to keep in mind that variables do not need to represent only numbers.
+    In linear algebra, they can be matrices or vectors. In probability, they can be random
+    variables. In essence, their uses are varied and widespread.
+}
+
+
+\subsection{Usage of First Type}
+
+\slide{Variables}{
+    For its first use, consider asking the following question:
+    \begin{center}
+        Is there a number with the following property: doubling it and adding
+        3 gives the same result as squaring it?
+    \end{center}
+
+    Here, we introduce a variable \(x\) to avoid ambiguity:
+    \begin{center}
+        Is there a number \(x\) with the property that \(2x+3=x^2\)?
+    \end{center}
+}
+
+
+\subsection{Usage of Second Type}
+
+\slide{Variables}{
+    For its second use, consider the following statement:
+    \begin{center}
+        No matter what odd integer we choose, if we square it and then divide
+        the result by 8, we'll get a remainder of 1.
+    \end{center}
+
+    Here, we introduce a variable \(n\) to avoid ambiguity:
+    \begin{center}
+        No matter what odd integer \(n\) we choose, \(n^2\) has a remainder of 1
+        when we divide it by 8.
+    \end{center}
+}
+
+
+\subsection{Example}
+
+\slide{Example}{
+    Rewrite the following sentences using variables.
+    \begin{enumerate}
+        \item[(a)] Are there integers with the property that the sum of their squares is equal to the square of their sum?
+        \item[(b)] The fourth power of every real number is positive.
+        \item[(c)] There is a real number whose natural logarithm is $-3$.
+    \end{enumerate}
+}
+
+
+\slide{Solution to Example}{
+    \begin{enumerate}
+    \item[(a)] Are there integers \(m\) and \(n\) such that \(m^2 + n^2 = (m+n)^2\)?
+    \item[(b)] If \(x\) is a real number, then \(x^4\) is positive.
+    \item[(c)] There exists a real number \(y\) such that \(\ln(y) = -3\).
+    \end{enumerate}
+}
+
+
+
+\section{Important Kinds of Mathematical Statements}
+
+
+\subsection{Overview of the Kinds of Mathematical Statements}
+
+\slide{Universal, Conditional, and Existential Statements}{
+    \dfn{A \textbf{universal statement} says that a certain property is true for all elements in a set.
+    For example: All positive numbers are greater than zero.}
+
+    \dfn{A \textbf{conditional statement} says that if one thing is true then some other thing also has to be true.
+    For example: If 378 is divisible by 18, then 378 is divisible by 6.}
+
+    \dfn{An \textbf{existential statement} says that there is at least one thing for which a particular property is true.
+    For example: There is a prime number that is even.}
+}
+
+
+\slide{Universal, Conditional, and Existential Statements}{
+    Here are some more examples of the different kinds of statements.
+    \begin{itemize}
+        \item Every $2 \times 2$ matrix $C$ has an inverse $C^{-1}$. \\
+        (Universal Statement)
+        \item If $3$ and $4$ are elements of a set $W$, then $\{3,4\}$ is a subset of $W$. \\
+        (Conditional Statement)
+        \item There is a function defined on the set of all real numbers whose derivative is 
+        \(
+            \frac{x}{\sqrt{x^2 + 9}}.
+        \) \\
+        (Existential Statement)
+    \end{itemize}
+}
+
+
+\subsection{Universal Conditional Statements}
+
+\slide{Universal Conditional Statements}{
+    Universal statements contain some variation of the words “for every”.
+
+    Conditional statements contain versions of the words “if-then.”
+
+    A \textbf{universal conditional} statement is a statement that is both universal and conditional.
+    Consider the following example:
+    \begin{center}
+        For all animals \(a\), if \(a\) is a dog, then \(a\) is a mammal.
+    \end{center}
+}
+
+
+\slide{Hiding Universality or Conditionality}{
+    Consider the statement:
+    \begin{center}
+        For all animals \(a\), if \(a\) is a dog, then \(a\) is a mammal.
+    \end{center}
+
+    It can be rewritten in a that makes it appear purely universal or purely conditional.
+    For example, the statement can be rewritten to make its conditional nature explicit but
+    its universal nature implicit:
+    \begin{center}
+        If \(a\) is a dog, then \(a\) is a mammal.
+    \end{center}
+
+    The statement can also be expressed so that its universal nature is explicit and its
+    conditional nature is implicit:
+    \begin{center}
+        For every dog \(a\), \(a\) is a mammal.
+    \end{center}
+}
+
+
+\subsection{Universal Existential Statements}
+
+\slide{Universal Existential Statements}{
+    A \textbf{universal existential} statement has two parts. The first part is universal because
+    it says that a certain property is true for all objects of a given type. The second part is
+    existential because it asserts the existence of something.
+
+    For example:
+    \begin{center}
+        Every real number has an additive inverse.
+    \end{center}
+}
+
+
+\slide{Rewriting Universal Existential Statements}{
+    Needless to say, universal existential statements can be rewritten, just like universal
+    conditional statements. The statement:
+    \begin{center}
+        Every real number has an additive inverse.
+    \end{center}
+    can be rewritten as:
+    \begin{itemize}
+        \item All real numbers have additive inverses.
+        \item For every real number \(r\), there is an additive inverse for \(r\).
+        \item For every real number \(r\), there exists a real number \(s\) such that \(s\) is an
+        additive inverse for \(r\).
+    \end{itemize}
+}
+
+
+\subsection{Existential Universal Statements}
+
+\slide{Existential Universal Statements}{
+    An \textbf{existential universal} statement has two parts. The first is existential because it
+    asserts that a certain object exists. The second part is universal because the object satisfies
+    a certain property for all things of a certain kind.
+
+    For example:
+    \begin{center}
+        There exists a positive integer that is less than or equal to every positive integer.
+    \end{center}
+}
+
+
+\slide{Rewriting Existential Universal Statements}{
+    The statement:
+    \begin{center}
+        There exists a positive integer that is less than or equal to every positive integer.
+    \end{center}
+    can be rewritten as:
+    \begin{itemize}
+        \item Some positive integer is less than or equal to every positive integer.
+        \item There is a positive integer \(m\) such that every positive integer is
+        greater than or equal to \(m\).
+        \item There is a positive integer \(m\) with the property that for every
+        positive integer \(n\), \(m \leq n\).
+    \end{itemize}
+}

@@ -1,0 +1,142 @@
+\section{Logical Form and Logical Equivalence}
+
+
+\subsection{Overview}
+
+\slide{Arguments, Form, and Conclusions}{
+    An \textbf{argument} is a sequence of statements aimed at proving the truth of an assertion.
+    The assertion at the end of the sequence is called the \textbf{conclusion}, and the preceding
+    statements are called \textbf{premises}.
+
+    In logic, the form of an argument is distinguished from its content. This means that logical analysis
+    won't help you determine the truth of an argument's content, but it will help
+    you analyze an argument's form to determine whether the truth of the conclusion follows
+    necessarily from the truth of the premises.
+}
+
+
+\slide{Arguments, Form, and Conclusions}{
+    Consider the following two arguments.
+    \begin{center}
+        Argument 1
+    \end{center}
+    {\scriptsize
+    \[\text{If } \underbrace{\text{the bell rings}}_{p}
+    \ \text{or} \
+    \underbrace{\text{the flag drops}}_{q},
+    \ \text{then} \
+    \underbrace{\text{the race is over}}_{r}.\]}
+    {\scriptsize
+    \[
+    \therefore \ 
+    \text{If }\underbrace{\text{the race is not over}}_{\text{not } r},
+    \ \text{then} \
+    \underbrace{\text{the bell hasn’t rung}}_{\text{not } p}
+    \ \text{and} \
+    \underbrace{\text{the flag hasn’t dropped}}_{\text{not } q}.\]}
+
+    \begin{center}
+        Argument 2
+    \end{center}
+    {\scriptsize
+    \[\text{If } \underbrace{ x=2}_{p}
+    \ \text{or} \
+    \underbrace{x=-2}_{q},
+    \ \text{then} \
+    \underbrace{x^2 = 4}_{r}.\]}
+    {\scriptsize
+    \[\therefore
+    \text{If } \underbrace{ x^2 \not= 4,}_{\text{not } r}
+    \ \text{then} \
+    \underbrace{x \not= 2}_{\text{not } p}
+    \ \text{and} \
+    \underbrace{x \not= -2}_{\text{not } q}.\]}
+}
+
+
+\slide{Arguments, Form, and Conclusions}{
+    They have very different content but their logical form is the same. To help make
+    this clear, we use letters like \(p\), \(q\), and \(r\) to represent component sentences.
+    We let the expression “not \(p\)” refer to the sentence ``It is not the case that \(p\) is true''
+    or ``\(p\) is false''.
+
+    The two arguments have a common \emph{logical form} of:
+    \begin{center}
+        If \(p\) or \(q\), then \(r\). \\
+        \(\therefore\) If not \(r\), then not \(p\) and not \(q\).
+    \end{center}
+}
+
+
+\subsection{Propositions}
+
+\slide{Proposition}{
+    \dfn{A \textbf{proposition} is a sentence that is either true or false but not both.}
+    \begin{example}
+        For example, ``2 + 2 = 4'' and ``2 + 2 = 5'' are both propositions,
+        the first because it is true and the second because it is false.
+    \end{example}
+
+    \dfn{A \textbf{theorem} is a proposition that can be shown to be true.}
+    \begin{example}
+        For example, Pythagoras' theorem ``\(a^2 + b^2 = c^2\)'' can be shown to be true
+        in a multitude of ways.
+    \end{example}
+}
+
+
+\slide{Propositions}{
+    Here are some examples of sentences that are \emph{not} propositions:
+    \begin{enumerate}
+        \item[(1)] \(x^2 + 2 = 11\)
+        \item[(2)] \(x + y > 0\)
+    \end{enumerate}
+
+    (1) is not a proposition because its truth or falsity depends
+    on the value of \(x\). For some values of \(x\), it is true, whereas for other values it is false.
+
+    (2) is not a proposition because its truth or falsity depends
+    on the values of \(x\) and \(y\). For instance, when \(x = -1\) and \(y = 2\) it is true, whereas
+    when \(x = -1\) and \(y = 1\) it is false.
+}
+
+
+\subsection{Compound Propositions}
+
+\slide{Compound Propositions}{
+    We have seen that propositions are sentences that are either true or false but not both.
+
+    Naturally, we would next like to build more complex sentences.
+    We now introduce three symbols that are used to build more complicated logical expressions\
+    out of simpler ones.
+}
+
+\slide{Negation}{
+    The symbol \(\neg\) denotes ``not''. Given a proposition \(p\), the sentence \(\neg p\) is read
+    ``not \(p\)'' or “it is not the case that \(p\) is true'' or ``\(p\) is false.''
+
+    More formally, it called the \textbf{negation} of \(p\). It can be written in many different ways
+    including: \(\sim p\), \(\bar{p}\), \(!p\), or even \(p'\).
+}
+
+
+\slide{Disjunction}{
+    The symbol \(\lor\) denotes ``or''. Given propositions \(p\) and \(q\), the sentence \(p \lor q\)
+    is read ``\(p\) or \(q\).''
+
+    More formally, \(p \lor q\) is called the \textbf{disjunction} of \(p\) and \(q\). This can also be written
+    as: \(p + q\), \(p \ | \ q\), and \(p \ || \ q\).
+
+    Programming languages often use \(p \ || \ q\).
+}
+
+
+\slide{Conjunction}{
+    The symbol \(\land\) denotes ``and''. Given propositions \(p\) and \(q\), the sentence \(p \land q\)
+    is read ``\(p\) and \(q\).''
+
+    More formally, \(p \land q\) is called the \textbf{conjunction} of \(p\) and \(q\). This can also be written
+    as: \(p \times q\), \(p \ \& \ q\), \(p \ \& \& \ q\).
+
+    Programming languages often use \(p \ \& \& \ q\).
+}

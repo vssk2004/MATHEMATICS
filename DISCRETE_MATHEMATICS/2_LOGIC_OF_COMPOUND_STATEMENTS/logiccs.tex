@@ -1,0 +1,35 @@
+% Document class
+\documentclass{beamer}
+\usetheme{Madrid}
+
+% Packages and Macros
+\input{preamble.tex}
+
+% Pictures
+\graphicspath{ {/Users/vssk/Pictures/LaTeX} }
+
+% Title
+\title{Logic of Compound Statements}
+\author{Venkata Khandrika}
+\date[Mathematics]
+{}
+
+
+\begin{document}
+
+    % Title page
+    % This page includes the informations defined earlier including title, author/s, affiliation/s and the date
+    \begin{frame}
+    \titlepage
+    \end{frame}
+
+    % Outline
+    % This page includes the outline (Table of content) of the presentation. All sections and subsections will appear in the outline by default.
+    \begin{frame}{Outline}
+    \tableofcontents[hideallsubsections]
+    \end{frame}
+
+    \input{formequiv.tex}
+    \input{references.tex}
+
+\end{document}
