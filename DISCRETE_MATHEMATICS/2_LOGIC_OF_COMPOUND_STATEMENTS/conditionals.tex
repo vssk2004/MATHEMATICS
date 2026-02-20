@@ -1,0 +1,277 @@
+\section{Conditional Propositions}
+
+
+\subsection{Conditional}
+
+\slide{Conditional}{
+    \dfn{If \(p\) and \(q\) are propositional variables, the the conditional of \(q\) by \(p\) is “If \(p\), then \(q\).”
+    It is denoted by \(p \to q\).
+    It is false when \(p\) is true and \(q\) is false; otherwise it is true.
+    We call \(p\) the hypothesis (or antecedent) of the conditional and \(q\) the conclusion (or consequent).}
+
+    The notation \(p \to q\) indicates that \(\to\) is a connective, like \(\land\) or \(\lor\), which can be used to join propositions to create new propositions.
+
+    To define \(p \to q\) as a statement, therefore, we must specify the truth values for \(p \to q\) as we specified truth values for \(p \land q\) and for \(p \lor q\).
+}
+
+
+\slide{Truth Table for Conditional}{
+    To understand the truth table for \(p \to q\), we can think of the conditional as a promise.
+    For instance, suppose you go to interview for a job at a store and the owner of the
+    store makes you the promise: ``If you show up for work Monday morning, then you will get the job.''
+
+    Under what circumstances are you justified in saying the owner spoke
+    falsely? That is, under what circumstances is the above sentence false?
+    The answer is: You \emph{do} show up for work Monday morning and you \emph{do
+    not} get the job. Nothing is specified about what happens if you do not show
+    up. Therefore, it is not false regardless of whether you get the job or not.
+
+    \begin{center}
+    \resizebox{0.225\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$ & $q$ & $p \to q$ \\
+    \hline
+    T & T & T \\
+    T & F & F \\
+    F & T & T \\
+    F & F & T \\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+}
+
+
+\slide{Vacuously True}{
+    A conditional statement that is true by virtue of the fact that its hypothesis is false is often
+    called \textbf{vacuously true} or \textbf{true by default}.
+
+    In the previous example, the store owner's promise only says you will get the job if a certain
+    condition (showing up for work Monday morning) is met; it says nothing about what will happen if
+    the condition is not met.
+
+    For example, consider the proposition ``If \(0 = 1\), then \(1 = 2\).'' This proposition is 
+    true. Why? The hypothesis \(0 = 1\) is false, therefore the conditional is vacuously true.
+}
+
+
+\slide{Updated Order of Operations}{
+    The order is as follows:
+    \begin{enumerate}
+        \item[(1)] \(\neg\) 
+        \item[(2)] \(\land\) and \(\lor\)
+        \item[(3)] \(\to\) 
+    \end{enumerate}
+}
+
+
+\slide{Representation of If-Then as Or}{
+    Consider the conditional \(p \to q\). We can rewrite this as \(\neg p \lor q\).
+
+    \begin{center}
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{tabular}{|c c|c|c c|}
+    \hline
+    $p$ & $q$ & $\neg p$ & $\neg p \lor q$ & $p \to q$ \\
+    \hline
+    T & T & F & T & T \\
+    T & F & F & F & F \\
+    F & T & T & T & T \\
+    F & F & T & T & T \\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+
+    As evident, \(\neg p \lor q\) and \(p \to q\) have the same truth values for all
+    possible combinations of truth values of \(p\) and \(q\). Therefore, they are logically equivalent.
+}
+
+
+\subsection{Negation of Conditional}
+
+\slide{Negation of a Conditional}{
+    We now know that \(p \to q \; \equiv \; \neg p \lor q\). Thus, we can now find the negation of \(p \to q\) by
+    taking the negation of \(\neg p \lor q\).
+
+    \[
+    \neg (\neg p \lor q) \; \ \equiv \; \ \neg (\neg p) \land \neg q \; \ \equiv \; \ p \land \neg q
+    \]
+    \[\therefore \; \; \neg(p \to q) \; \equiv \; p \land \neg q\]
+
+    The negation of “if \(p\) then \(q\)” is logically equivalent to “\(p\) and not \(q\).”
+}
+
+
+\slide{Example}{
+    Write down the negations of the following conditionals:
+    \begin{enumerate}
+        \item[(1)] If my car is in the repair shop, then I cannot get to class.
+        \item[(2)] If it is sunny, then I will go to the beach. 
+    \end{enumerate}
+
+    Answers:
+    \begin{enumerate}
+        \item[(1)] My car is in the repair shop and I can get to class.
+        \item[(2)] It is sunny and I will not go to the beach.
+    \end{enumerate}
+}
+
+
+\subsection{Contrapositive}
+
+\slide{Contrapositive}{
+    \dfn{The \textbf{contrapositive} of a conditional proposition of form ``If \(p\) then \(q\)'' is:
+    \[\text{If} \ \neg q \ \text{then} \ \neg p.\]
+    Symbolically, the contrapositive of \(p \to q\) is \(\neg q \to \neg p\).}
+
+    A conditional proposition is logically equivalent to its contrapositive.
+
+    The above stated result is a fundamental result in logic. It is used very often in mathematical proofs
+    as a proof technique called \textbf{proof by contrapositive}, which will be discussed later.
+}
+
+
+\subsection{Converse and Inverse}
+
+\slide{Converse}{
+    \dfn{Suppose a conditional proposition of the form “If p then q” is given.
+    Its \textbf{converse} is:
+    \[\text{If} \ q \ \text{then} \ p.\]
+    Symbolically, the converse of \(p \to q\) is \(q \to p\).}
+
+    \dfn{Suppose a conditional proposition of the form “If p then q” is given.
+    Its \textbf{inverse} is:
+    \[\text{If} \ \neg p \ \text{then} \ \neg q.\]
+    Symbolically, the inverse of \(p \to q\) is \(\neg p \to \neg q\).}
+}
+
+
+\slide{Example}{
+    Write the converse and inverse of each of the following propositions:
+    \begin{enumerate}
+        \item[(1)] If Howard can swim across the lake, then Howard can swim to the island.
+        \item[(2)] If today is Easter, then tomorrow is Monday.
+    \end{enumerate}
+
+    Answers:
+    \begin{itemize}
+        \item Converse (1): If Howard can swim to the island, then Howard can swim across the lake.
+        \item Inverse (1): If Howard cannot swim across the lake, then Howard cannot swim to the island.
+        \item Converse (2): If tomorrow is Monday, then today is Easter.
+        \item Inverse (2): If today is not Easter, then tomorrow is not Monday.
+    \end{itemize}
+}
+
+
+\slide{Converse and Inverse}{
+    Note that the converse and inverse of a conditional proposition are logically equivalent.
+    For this, suppose that we have a conditional proposition \(p \to q\).
+
+    Its converse is: \(q \to p\). The contrapositive of the converse is: \(\neg p \to \neg q\).
+    Note the contrapositive of the converse is the inverse.
+
+    Since a conditional proposition and its contrapositive are logically equivalent, the
+    converse and the inverse of a conditional are logcially equivalent.
+}
+
+
+\subsection{Biconditional}
+
+\slide{Only If}{
+    It is important to understand ``only if '' before studying the biconditional.
+    
+    To say “\(p\) only if \(q\)” means that \(p\) can take place only if \(q\) takes place also.
+    That is, if \(q\) does not take place, then \(p\) cannot take place.
+
+    Symbolically, “\(p\) only if \(q\)” means \(\neg q \to \neg p\). Furthermore, we know
+    that a conditional proposition is logically equivalent to its contrapositive.
+    
+    Therefore, “\(p\) only if \(q\)” means \(p \to q\).
+}
+
+
+\slide{Caution!}{
+    Remember, “\(p\) only if \(q\)” does \emph{not} mean ``\(p\) if \(q\).''
+
+    \[p \text{ only if } q \; \text{ means } \; p \to q\]
+    \[p \text{ if } q \; \text{ means } \; q \to p\]
+}
+
+
+\slide{Biconditional}{
+    \dfn{Given propositional variables \(p\) and \(q\), the \textbf{biconditional} of \(p\) and
+    \(q\) is ``\(p\) if, and only if, \(q\).'' It is denoted by \(p \leftrightarrow q\).
+    It is true if both \(p\) and \(q\) have the same truth values and is false if \(p\) and \(q\)
+    have opposite truth values.}
+
+    Note that the first part of the biconditional is ``\(p\) if \(q\)'' this means \(q \to p\).
+    The second part is ``\(p\) only if \(q\)'' this means \(p \to q\).
+
+    The phrase ``if and only if'' is abbreviated \textbf{iff}.
+
+    \begin{center}
+    \resizebox{0.225\textwidth}{!}{%
+    \begin{tabular}{|c c|c|}
+    \hline
+    $p$ & $q$ & $p \leftrightarrow q$ \\
+    \hline
+    T & T & T \\
+    T & F & F \\
+    F & T & F \\
+    F & F & T \\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+}
+
+
+\slide{Order of Operations}{
+    The order is as follows:
+    \begin{enumerate}
+        \item[(1)] \(\neg\) 
+        \item[(2)] \(\land\) and \(\lor\)
+        \item[(3)] \(\to\)  and \(\leftrightarrow\)
+    \end{enumerate}
+}
+
+
+\slide{Expressing Biconditional using Conditionals}{
+    Note that the first part of the biconditional is ``\(p\) if \(q\)'' this means \(q \to p\).
+    The second part is ``\(p\) only if \(q\)'' this means \(p \to q\). Therefore, the biconditional
+    is simply the conjunction of the two conditionals.
+
+    \begin{center}
+    \resizebox{0.7\textwidth}{!}{%
+    \begin{tabular}{|c c|c|c|c|c|}
+    \hline
+    $p$ & $q$ & $p \to q$ & $ q\to p$ & $p \leftrightarrow q$ &  \((p \to q) \land (q \to p)\) \\
+    \hline
+    T & T & T & T & T & T\\
+    T & F & F & T & F & F\\
+    F & T & T & F & F & F\\
+    F & F & T & T & T & T\\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+}
+
+
+\subsection{Necessary and Sufficient Conditions}
+
+\slide{Necessary and Sufficient Conditions}{
+    \dfn{If \(p\) and \(q\) are propositional variables:
+    \begin{itemize}
+        \item ``\(p\) is a \textbf{sufficient condition} for \(q\)'' means that \(p \to q\)
+        \item ``\(p\) is a \textbf{necessary condition} for \(q\)'' means that \(q \to p\) 
+    \end{itemize}}
+
+    The sufficient condition is equivalent to ``\(p\) only if \(q\)'' and the necessary condition is equivalent
+    to ``\(p\) if \(q\).''
+
+    Therefore, saying that ``\(p\) is a necessary and sufficient condition for \(q\)'' means
+    ``\(p\) if and only if \(q\).'' Symbolically, it means \(p \leftrightarrow q\).
+}

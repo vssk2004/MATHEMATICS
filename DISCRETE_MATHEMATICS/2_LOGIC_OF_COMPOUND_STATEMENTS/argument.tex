@@ -1,0 +1,430 @@
+\section{Valid and Invalid Arguments}
+
+
+\subsection{Arguments}
+
+\slide{Arguments and Argument Form}{
+    \dfn{An \textbf{argument} in logic is a sequence of propositions. All but the final proposition
+    in the argument are called \textbf{premises} and the final proposition is called the \textbf{conclusion}.
+    An argument is \textbf{valid} if the truth of all its premises implies that the conclusion is true.}
+
+    \dfn{An \textbf{argument form} in propositional logic is a sequence of compound propositions involving
+    propositional variables. An argument form is \textbf{valid} if no matter which particular
+    propositions are substituted for the propositional variables in its premises, the conclusion is
+    true if the premises are all true.}
+}
+
+
+\subsection{Validity}
+
+\slide{Valid Argument}{
+    The crucial fact about a valid argument is that the truth of its conclusion follows \emph{necessarily}
+    or \emph{inescapably} or \emph{by logical form alone} from the truth of its premises.
+
+    It is impossible to have a valid argument with all true premises and a false conclusion.
+
+    When an argument is valid and its premises are true, the truth of the conclusion is said to be \emph{inferred}
+    or \emph{deduced} from the truth of its premises.
+}
+
+
+\slide{Testing Validity}{
+    We now understand that when an argument is valid, the truth of the conclusion is inferred from the truth of its
+    premises. However, we might sometimes want to confirm whether an argument is valid. To achieve this, we use
+    truth tables.
+
+    To test an argument form for validity:
+    \begin{enumerate}
+        \item[(1)] Identify the premises and conclusion of the argument form.
+        \item[(2)] Construct a truth table showing the truth values of all the premises and the conclusion.
+        \item[(3)] A row of the truth table in which all the premises are true is called a \emph{critical row}.
+        If the conclusion in every critical row is true, then the argument form is valid. Otherwise, it is invalid.
+    \end{enumerate}
+}
+
+
+\slide{Example}{
+    Prove that the following argument form is valid:
+    \[\begin{aligned}
+        &\text{If } p \text{ then } q. \\
+        &p. \\
+        \therefore \ &q.
+    \end{aligned}\]
+
+    \begin{center}
+    \resizebox{0.4\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c||c|}
+    \cline{3-5}
+    \multicolumn{2}{c|}{} 
+    & \multicolumn{2}{c||}{\textbf{premises}} 
+    & \multicolumn{1}{c|}{\textbf{conclusion}} \\
+    \hline
+    $p$ & $q$ & $p \rightarrow q$ & $p$ & $q$ \\
+    \hline
+    \rowcolor{blue!15}
+    T & T & T & T & T \\
+    \hline
+    T & F & F & T & F \\
+    \hline
+    F & T & T & F & T \\
+    \hline
+    F & F & T & F & F \\
+    \hline
+    \end{tabular}
+    }
+    \end{center}
+
+    As evident from the highlighted critical row, the conclusion in every critical row is true, therefore the
+    argument form is valid.
+}
+
+
+\slide{Validity and Truth Tables}{
+    We can always use a truth table to show that an argument form is valid. We do this by showing
+    that whenever the premises are true, the conclusion must also be true. However, this can be
+    a tedious approach.
+    
+    For example, when an argument form involves 10 diﬀerent propositional variables, to use a truth
+    table to show this argument form is valid requires \(2^{10} = 1024\) diﬀerent rows.
+
+    Fortunately, we do not always have to resort to truth tables. Instead, we can first establish the
+    validity of some relatively simple argument forms, called \textbf{rules of inference}.
+
+    We will now introduce \emph{modus ponens} and \emph{modus tollens}, the most important rules of inference in
+    propositional logic.
+}
+
+
+\subsection{Modus Ponens and Modus Tollens}
+
+\slide{Syllogism}{
+    \dfn{An argument form consisting of two premises and a conclusion is called a \textbf{syllogism}.
+    The first and second premises are called the major premise and minor premise, respectively.}
+
+    The two most famous forms of syllogism in logic are modus ponens and modus tollens.
+}
+
+
+\slide{Modus Ponens}{
+    Modus Ponens has the form:
+    \[\boxed{\begin{aligned}
+        &p \to q. \\
+        &p. \\
+        \therefore \ &q.
+    \end{aligned}}\]
+    
+    Here is an argument of this form:
+    \[
+    \begin{aligned}
+    &\text{If the sum of the digits of 371,487 is divisible by 3,} \\
+    &\text{then 371,487 is divisible by 3.} \\
+    &\text{The sum of the digits of 371,487 is divisible by 3.} \\
+    \therefore\ &\text{371,487 is divisible by 3.}
+    \end{aligned}
+    \]
+
+    The term modus ponens is Latin meaning ``method of affirming'' (the conclusion is an affirmation).
+}
+
+
+\slide{Proving Validity of Modus Ponens}{
+    \begin{center}
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c||c|}
+    \cline{3-5}
+    \multicolumn{2}{c|}{} 
+    & \multicolumn{2}{c||}{\textbf{premises}} 
+    & \multicolumn{1}{c|}{\textbf{conclusion}} \\
+    \hline
+    $p$ & $q$ & $p \rightarrow q$ & $p$ & $q$ \\
+    \hline
+    \rowcolor{blue!15}
+    T & T & T & T & T \\
+    \hline
+    T & F & F & T & F \\
+    \hline
+    F & T & T & F & T \\
+    \hline
+    F & F & T & F & F \\
+    \hline
+    \end{tabular}
+    }
+    \end{center}
+
+    The first row is the only one in which both premises are true. Furthermore, the conclusion in that 
+    row is also true. Hence, the argument form is valid.
+}
+
+
+\slide{Modus Tollens}{
+    Modus Tollens has the form:
+    \[\boxed{\begin{aligned}
+        &p \to q. \\
+        &\neg q. \\
+        \therefore \ & \neg p.
+    \end{aligned}}\]
+
+    Here is an argument of this form:
+    \[
+    \begin{aligned}
+    &\text{If Zeus is human, then Zeus is mortal.} \\
+    &\text{Zeus is not mortal.} \\
+    \therefore\ &\text{Zeus is not human.}
+    \end{aligned}
+    \]
+
+    The term modus tollens is Latin meaning ``method of denying'' (the conclusion is a denial).
+}
+
+
+\slide{Proving Validity of Modus Tollens}{
+    \begin{center}
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c||c|}
+    \cline{3-5}
+    \multicolumn{2}{c|}{} 
+    & \multicolumn{2}{c||}{\textbf{premises}} 
+    & \multicolumn{1}{c|}{\textbf{conclusion}} \\
+    \hline
+    $p$ & $q$ & $p \rightarrow q$ & $\neg q$ & $\neg p$ \\
+    \hline
+    T & T & T & F & F \\
+    \hline
+    T & F & F & T & F \\
+    \hline
+    F & T & T & F & T \\
+    \hline
+    \rowcolor{blue!15}
+    F & F & T & T & T \\
+    \hline
+    \end{tabular}
+    }
+    \end{center}
+
+    The last row is the only one in which both premises are true. Furthermore, the conclusion in that 
+    row is also true. Hence, the argument form is valid.
+}
+
+
+\subsection{Rules of Inference}
+
+\slide{Validity of an Argument}{
+    As we have seen, the rules of inferences called modus ponens and modus tollens are valid forms of argument. Now, we look
+    at more rules of inference. 
+    
+    Before that, it is imperative to understand that
+    from the definition of a valid argument form, we see that the argument form with premises \(p_1, p_2, \dots, p_n\)
+    and conclusion \(q\) is valid exactly when \(p_1 \land p_2 \land \dots \land p_n \to q\) is a tautology.
+}
+
+
+\slide{Rules of Inference}{
+\begin{table}[h!]
+\centering
+\resizebox{0.65\textwidth}{!}{%
+\begin{tabular}{|>{\centering\arraybackslash}m{4cm}|
+                >{\centering\arraybackslash}m{5.5cm}|
+                >{\centering\arraybackslash}m{4cm}|}
+\hline
+\textbf{Rule of Inference} & \textbf{Tautology} & \textbf{Name} \\ \hline
+
+$\begin{aligned}
+p \to q \\
+p \\
+\therefore\ q
+\end{aligned}$
+&
+$(p \land (p \to q)) \to q$
+&
+Modus ponens \\ \hline
+
+$\begin{aligned}
+p \to q \\
+\neg q \\
+\therefore\ \neg p
+\end{aligned}$
+&
+$(\neg q \land (p \to q)) \to \neg p$
+&
+Modus tollens \\ \hline
+
+$\begin{aligned}
+p \to q \\
+q \to r \\
+\therefore\ p \to r
+\end{aligned}$
+&
+$((p \to q) \land (q \to r)) \to (p \to r)$
+&
+Hypothetical syllogism (Transitivity) \\ \hline
+
+$\begin{aligned}
+p \lor q \\
+\neg p \\
+\therefore\ q
+\end{aligned}$
+&
+$((p \lor q) \land \neg p) \to q$
+&
+Disjunctive syllogism (Elimination) \\ \hline
+
+$\begin{aligned}
+p \\
+\therefore\ p \lor q
+\end{aligned}$
+&
+$p \to (p \lor q)$
+&
+Addition (Generalization) \\ \hline
+
+$\begin{aligned}
+p \land q \\
+\therefore\ p
+\end{aligned}$
+&
+$(p \land q) \to p$
+&
+Simplification (Specialization) \\ \hline
+
+$\begin{aligned}
+p \\
+q \\
+\therefore\ p \land q
+\end{aligned}$
+&
+$(p \land q) \to (p \land q)$
+&
+Conjunction \\ \hline
+
+$\begin{aligned}
+p \lor q \\
+\neg p \lor r \\
+\therefore\ q \lor r
+\end{aligned}$
+&
+$((p \lor q) \land (\neg p \lor r)) \to (q \lor r)$
+&
+Resolution \\ \hline
+
+\end{tabular}%
+}
+\caption{Rules of Inference}
+\end{table}
+}
+
+
+\subsection{Fallacy}
+
+\slide{Fallacy}{
+    A \textbf{fallacy} is an error in reasoning that results in an invalid argument.
+    
+    Some common fallacies include:
+    \begin{itemize}
+        \item using ambiguous premises (and treating them as if they were unambiguous)
+        \item circular reasoning (assuming what is to be proved without having derived it from the premises)
+        \item jumping to a conclusion (without adequate grounds)
+        \item converse error (i.e. fallacy of aﬃrming the conclusion)
+        \item inverse error (i.e. fallacy of denying the hypothesis)
+    \end{itemize}
+}
+
+
+\slide{Converse Error}{
+    Consider the following argument:
+    \[\begin{aligned}
+        &\text{If you do every problem in the book, then you will learn discrete} \\
+        &\text{mathematics.} \\
+        &\text{You learned discrete mathematics.} \\
+        &\text{Therefore, you did every problem in the book.}
+    \end{aligned}\]
+
+    Is this argument valid? The answer is \textbf{no}. Why?
+
+    The argument's premises are \(p \to q\) and \(q\). Its conclusion is \(p\). This argument form is
+    valid when \(((p \to q) \land q) \to p\) is a tautology. However, we can prove that this
+    is \emph{not} a tautology using truth tables.
+
+    This type of incorrect reasoning is called the fallacy of aﬃrming the conclusion or converse error.
+}
+
+
+\slide{Inverse Error}{
+    Consider the following argument:
+    \[\begin{aligned}
+        &\text{If you do every problem in the book, then you will learn discrete} \\
+        &\text{mathematics.} \\
+        &\text{You did not do every problem in the book.} \\
+        &\text{Therefore, you did not learn discrete mathematics.}
+    \end{aligned}\]
+
+    Is this argument valid? The answer is \textbf{no}. Why?
+
+    The argument's premises are \(p \to q\) and \(\neg p\). Its conclusion is \(\neg q\). This argument form is
+    valid when \(((p \to q) \land \neg p) \to \neg q\) is a tautology. However, we can prove that this
+    is \emph{not} a tautology using truth tables.
+
+    This type of incorrect reasoning is called the fallacy of denying the hypothesis or inverse error.
+}
+
+\subsection{Contradictions and Valid Arguments}
+
+\slide{Contradiction}{
+    Contradiction can be used to make inferences through a technique of reasoning called the \emph{contradiction rule}.
+
+    \dfn{If it can be shown that the proposition \(\neg p\) leads to a contradiction, then we can conclude
+    that \(p\) is true. Symbolically, we must show that \(\neg p \to c\).}
+
+    Now, it is natural to ask whether or not this is a valid argument form. It is.
+    This can be shown using the truth table for the following argument form which
+    represents the contradiction rule:
+    \[\begin{aligned}
+        & \neg p \to c \\
+        \therefore \ &p
+    \end{aligned}\]
+}
+
+
+\slide{Contradiction Rule}{
+    Recall that an argument form with premises \(p_1, p_2, \dots, p_n\) and conclusion \(q\) is valid when
+    \((p_1 \land p_2 \land \dots \land p_n) \to q\) is a tautology.
+
+    Here, the premise is \(\neg p \to c\) and the conclusion is \(p\). Hence, we must show that \((\neg p \to c) \to p\)
+    is a tautology to prove that the contradiction rule is valid.
+
+    \begin{center}
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $p$ & $\neg p$ & $c$ & $\neg p \to c$ & $(\neg p \to c) \to p$ \\
+    \hline
+    T & F & F & T & T \\
+    \hline
+    F & T & F & F & T \\
+    \hline
+    \end{tabular}
+    }
+    \end{center}
+
+    As evident, \((\neg p \to c) \to p\) is a tautology. Therefore, the argument form of the contradiction rule
+    is valid.
+    
+    The contradiction rule is the logical heart of the method of proof by contradiction.
+}
+
+
+\section{Introduction to Boolean Expressions}
+
+\slide{Boolean Variables and Boolean Expressions}{
+    In logic, variables such as \(p\), \(q\), and \(r\) represent propositions. Furthermore, a proposition
+    can have one of only two truth values: T (true) or F (false).
+
+    A propositional form (or compound proposition) is an expression, such as
+    \(p \land (\neg q \lor r)\), composed of propositional variables and logical connectives.
+
+    One of the founders of symbolic logic was the English mathematician George Boole. In his honor,
+    any variable, such as a propositional variable or an input signal, that can take one of
+    only two values is called a \textbf{Boolean variable}.
+
+    An expression composed of Boolean variables and the connectives \(\neg\) , \(\land\), and \(lor\) is
+    called a \textbf{Boolean expression}.
+}

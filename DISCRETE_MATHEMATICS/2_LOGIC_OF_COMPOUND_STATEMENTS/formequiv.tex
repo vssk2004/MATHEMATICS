@@ -101,7 +101,7 @@
 }
 
 
-\subsection{Compound Propositions}
+\subsection{Negation, Disjunction, and Conjunction}
 
 \slide{Compound Propositions}{
     We have seen that propositions are sentences that are either true or false but not both.
@@ -139,4 +139,491 @@
     as: \(p \times q\), \(p \ \& \ q\), \(p \ \& \& \ q\).
 
     Programming languages often use \(p \ \& \& \ q\).
+}
+
+
+\slide{Inequalities}{
+    The notation for inequalities involves \emph{and} and \emph{or} statements. For instance, if \(x\), \(a\), and \(b\) are
+    particular real numbers, then:
+    \[\begin{aligned}
+    x \le a \quad &\text{means} \quad x < a \quad \text{or} \quad x = a \\
+    a \le x \le b \quad &\text{means} \quad a \le x \quad \text{and} \quad x \le b.
+    \end{aligned}\]
+}
+
+
+\slide{Order of Operations}{
+    In expressions that include the symbol \(\neg\), as well as \(\land\) or \(\lor\), the order of operations
+    becomes extremely important.
+
+    The order is as follows:
+    \begin{enumerate}
+        \item[(1)] \(\neg\) 
+        \item[(2)] \(\land\) and \(\lor\)
+    \end{enumerate}
+
+    The symbols \(\land\) and \(\lor\) are considered coequal in order of operation, and an expression
+    such as \(p \land q \lor r\) is considered ambiguous. This expression must be written as either
+    \((p \land q) \lor r\) or \(p \land (q \lor r)\) to have meaning.
+}
+
+
+\subsection{Translating English into Logic}
+
+\slide{But}{
+    A variety of words translate into logic as \(\land\), \(\lor\), and \(\neg\).
+    
+    The word `but' translates the same as `and.' Generally, the word `but' is used in place of `and'
+    when the part of the sentence that follows is, in some way, unexpected.
+    
+    For example, consider the sentence “Jim is tall but he is not heavy.” If we let
+    ``Jim is tall'' be the proposition \(t\) and ``he is heavy'' be \(h\), then we can rewrite the
+    sentence in logic as \(t \land \neg h\).
+}
+
+
+\slide{Neither-Nor}{
+    Another example involves the translating the words `neither-nor' into logic.
+
+    For example, consider the sentence “Neither a borrower nor a lender be.”
+    If we let ``Be a borrower'' be the proposition \(b\) and ``be a lender'' be \(d\),
+    then we can rewrite the sentence in logic as \(\neg b \land \neg d\).
+}
+
+
+\subsection{Truth Values}
+
+\slide{Truth Value}{
+    Recall that a proposition is a sentence that is either true or false but not both.
+    If the sentence is true, then its \textbf{truth value} is \textit{true}, otherwise
+    it is \textit{false}.
+
+    We now define compound sentences as propositions by specifying their truth values in
+    terms of the propositions that compose them. We use letters to
+    denote \emph{propositional variables} (or sentential variables), that is, variables
+    that represent propositions, just as letters are used to denote numerical variables.
+
+    To do this, we make some definitions about our logical operators.
+}
+
+
+\slide{Negation}{
+    \dfn{If \(p\) is a propostional variable, then the \textbf{negation} of \(p\) is ``not \(p\)''
+    or ``it is not the case that \(p\)'' and is denoted \(\neg p\). It has the opposite truth value from
+    \(p\): if \(p\) is true, \(\neg p\) is false; if \(p\) is false, \(\neg p\) is true.}
+
+    \begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.25}  % increases row height
+    \setlength{\tabcolsep}{7pt}         % increases column width
+    \begin{tabular}{|c|c|}
+    \hline
+    $p$ & $\neg p$ \\
+    \hline
+    T & F \\
+    \hline
+    F & T \\
+    \hline
+    \end{tabular}
+    \caption{Truth Table for the Negation of a Proposition}
+    \end{table}
+}
+
+
+\slide{Conjunction}{
+    \dfn{If \(p\) and \(q\) are propostional variables, then the \textbf{conjunction} of \(p\) and \(q\) is
+    ``\(p\) and \(q\)'' denoted ``\(p \land q\)''. It is true when, and only when, both \(p\) and \(q\)
+    are true. If either \(p\) or \(q\) or both are false, then \(p \land q\) is false.}
+
+    \begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.25}  % increases row height
+    \setlength{\tabcolsep}{7pt}         % increases column width
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$ & $q$ & $p \land q$ \\
+    \hline
+    T & T & T \\
+    \hline
+    T & F & F \\
+    \hline
+    F & T & F \\
+    \hline
+    F & F & F \\
+    \hline
+    \end{tabular}
+    \caption{Truth Table for Conjunction}
+    \end{table}
+}
+
+
+\slide{Disjunction}{
+    \dfn{If \(p\) and \(q\) are propostional variables, then the \textbf{disjunction} of \(p\) and \(q\) is
+    ``\(p\) or \(q\)'' denoted ``\(p \lor q\)''. It is false when, and only when, both \(p\) and \(q\)
+    are false. If either \(p\) or \(q\) or both are true, then \(p \lor q\) is true.}
+
+    \begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.25} % increases row height
+    \setlength{\tabcolsep}{7pt}      % increases column width
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$ & $q$ & $p \lor q$ \\
+    \hline
+    T & T & T \\
+    \hline
+    T & F & T \\
+    \hline
+    F & T & T \\
+    \hline
+    F & F & F \\
+    \hline
+    \end{tabular}
+    \caption{Truth Table for Disjunction}
+    \end{table}
+}
+
+
+\slide{Inclusive or Exclusive Or}{
+    In ordinary language, `or' is sometimes used in an exclusive sense
+    (\(p\) or \(q\) but not both) and sometimes in an inclusive sense (\(p\) or \(q\) or both).
+    
+    For instance, a waiter who says you may have “coffee, tea, or milk” uses the word or in an
+    exclusive sense; extra payment is generally required if you want more than one beverage.
+    
+    On the other hand, a waiter who offers “cream or sugar” uses the word or in an inclusive sense;
+    you are entitled to both cream and sugar if you wish to have them.
+
+    Inclusive `or' is denoted by \(\lor\), while \(\oplus\) is reserved for exclusive `or'.
+}
+
+
+\subsection{Propositional Form}
+
+\slide{Propositional Form}{
+    Now that truth values have been assigned to \(\neg p\), \(p \land q\), and \(p \lor q\), consider the question of
+    assigning truth values to more complicated expressions such as \(\neg p \lor q\) and \((p \lor q) \land \neg (p \land q)\).
+
+    Such expressions are called propositional forms.
+
+    \dfn{A \textbf{propositional form} is a proposition made up of propositional variables variables (like \(p\), \(q\), and \(r\))
+    and logical connectives (like \(\land\), \(\lor\), and \(\neg\)).}
+
+    It is common to refer to a propositional form to as a compound proposition.
+}
+
+\slide{Example}{
+    Consider the truth table for the compound proposition \((p \land q) \lor \neg r.\)
+    
+    \begin{center}
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{tabular}{|c c c|c c|c|}
+    \hline
+    $p$ & $q$ & $r$ & $p \land q$ & $\neg r$ & $(p \land q)\lor \neg r$ \\
+    \hline
+    T & T & T & T & F & T \\
+    T & T & F & T & T & T \\
+    T & F & T & F & F & F \\
+    T & F & F & F & T & T \\
+    F & T & T & F & F & F \\
+    F & T & F & F & T & T \\
+    F & F & T & F & F & F \\
+    F & F & F & F & T & T \\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+}
+
+
+\subsection{Logical Equivalence}
+
+\slide{Logical Equivalence}{
+    Consider the sentences:
+    \begin{enumerate}
+        \item[(1)] Dogs bark and cats meow
+        \item[(2)] Cats meow and dogs bark 
+    \end{enumerate}
+    These are two different ways of saying the same thing, the reason has nothing to do with the
+    definition of the words. It has to do with the logical form of the statements.
+
+    Any two propositions whose logical forms are related in the same way as (1) and (2) would either
+    both be true or both be false.
+}
+
+
+\slide{Logical Equivalence}{
+    \dfn{Two compound propositions \(P\) and \(Q\) are called \textbf{logically equivalent} if, and only if, they have
+    identical truth values for each possible substitution of propositions for their propositional variables. It is denoted by
+    writing: 
+    \[P \equiv Q\]}
+
+    How to test whether two compound propositions are logically equivalent?
+    \begin{enumerate}
+        \item[(1)] Construct a truth table with one column for the truth values of \(P\) and another column for the truth values of \(Q\).
+        \item[(2)] If the truth value of \(P\) in each row is the same as the truth value of \(Q\), then \(P\) and \(Q\) are logically equivalent.
+    \end{enumerate}
+}
+
+
+\slide{Example 1}{
+    Consider the double negation of a proposition \(\neg (\neg p)\). This is logically equivalent to the proposition \(p\).
+
+    This can be proved using the truth table for \(p\), \(\neg p\), and \(\neg (\neg p)\):
+
+    \begin{center}
+    \resizebox{0.25\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$ & $\neg p$ & $\neg (\neg p)$ \\
+    \hline
+    T & F & T \\
+    F & T & F \\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+
+    The truth value of \(p\) in each row is the same as the truth value of \(\neg (\neg p)\). Therefore, \(p\) and \(\neg (\neg p)\) are logically equivalent.
+}
+
+
+\slide{Example 2}{
+    Consider the compound propositions \(\neg (p \land q)\) and \(\neg p \land \neg q\). We can show that
+    these two are \emph{not} logically equivalent using their truth tables.
+
+    \begin{center}
+    \resizebox{0.75\textwidth}{!}{%
+    \begin{tabular}{|c c|c c c|c c c|}
+    \hline
+    $p$ & $q$ 
+    & $\neg p$ & $\neg q$ & $p \land q$ 
+    & $\neg (p \land q)$ &  & $\neg p \land \neg q$ \\
+    \hline
+    T & T & F & F & T & F &  & F \\
+    T & F & F & T & F & T & $\neq$ & F \\
+    F & T & T & F & F & T & $\neq$ & F \\
+    F & F & T & T & F & T &  & T \\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+
+    Let \(P\) and \(Q\) be the compound propositions \(\neg (p \land q)\) and \(\neg p \land \neg q\), respectively.
+    The truth value of \(P\) in each row is \emph{not} the same as the truth value of \(Q\). Therefore, \(P\) and \(Q\) are
+    \emph{not} logically equivalent.
+}
+
+
+\subsection{De Morgan's Laws}
+
+\slide{De Morgan's Laws 1}{
+    In Example 2, we showed that \(\neg (p \land q)\) and \(\neg p \land \neg q\) are not logically equivalent.
+    Naturally, one might ask what is the compound proposition \(\neg (p \land q)\) logically equivalent to.
+
+    To answer the question posed above, consider the proposition “John is tall and Jim is redheaded.” For this
+    proposition to be true, both components must be true. So for it to be false, one or both components must be false.
+    Thus the negation can be written as “John is not tall or Jim is not redheaded.”
+    
+    In general, the negation of the conjunction of two statements is logically equivalent to the disjunction of their
+    negations.
+}
+
+
+\slide{De Morgan's Laws 1}{
+    \begin{center}
+    \resizebox{0.75\textwidth}{!}{%
+    \begin{tabular}{|c c|c c c|c c|}
+    \hline
+    $p$ & $q$ 
+    & $\neg p$ & $\neg q$ & $p \land q$ 
+    & $\neg (p \land q)$ & $\neg p \lor \neg q$ \\
+    \hline
+    T & T & F & F & T & F & F \\
+    T & F & F & T & F & T & T \\
+    F & T & T & F & F & T & T \\
+    F & F & T & T & F & T & T \\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+
+    \[\therefore \; \; \neg (p \land q) \equiv \neg p \lor \neg q\]
+}
+
+
+\slide{De Morgan's Laws 2}{
+    Similarly, the negation of the disjunction of two propositions is logically equivalent to the conjunction of their negations.
+
+    \begin{center}
+    \resizebox{0.75\textwidth}{!}{%
+    \begin{tabular}{|c c|c c c|c c|}
+    \hline
+    $p$ & $q$ 
+    & $\neg p$ & $\neg q$ & $p \lor q$ 
+    & $\neg (p \lor q)$ & $\neg p \land \neg q$ \\
+    \hline
+    T & T & F & F & T & F & F \\
+    T & F & F & T & T & F & F \\
+    F & T & T & F & T & F & F \\
+    F & F & T & T & F & T & T \\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+
+    \[\therefore \; \; \neg (p \lor q) \equiv \neg p \land \neg q\]
+}
+
+
+\slide{Example}{
+    Use De Morgan's laws to write the negation of \(-1 < x \le 4\).
+
+    Firstly, the inequality means \(x > -1\) \emph{and} \(x \le 4\).
+    Therefore, the negation of this would be \(\neg (x > -1 \land x \le 4)\).
+    This is logically equivalent to the disjunction of the negations.
+
+    \[\begin{aligned}
+    \neg (x > -1 \land x \le 4) &\equiv \neg (x > -1) \lor \neg (x \le 4) \\
+    &\equiv (x \le -1) \lor (x > 4)
+    \end{aligned}\]
+
+    \[\therefore \; \; x \in (-\infty, -1] \cup (4, \infty)\]
+}
+
+
+\subsection{Tautologies and Contradictions}
+
+\slide{Tautologies}{
+    \dfn{A compound proposition that is always true, no matter what the truth values of the 
+    propositional variables that occur in it, is called a \textbf{tautology}.}
+
+    The compound proposition \(p \lor \neg p\) is a tautology. This can be shown using the truth
+    table for \(p\), \(\neg p\), and \(p \lor \neg p\):
+    \begin{center}
+    \resizebox{0.3\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$ & $\neg p$ & $p \lor \neg p$ \\
+    \hline
+    T & F & T \\
+    F & T & T \\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+}
+
+
+\slide{Contradictions}{
+    \dfn{A compound proposition that is always false, no matter what the truth values of the 
+    propositional variables that occur in it, is called a \textbf{contradiction}.}
+
+    The compound proposition \(p \land \neg p\) is a contradiction. This can be shown using the truth
+    table for \(p\), \(\neg p\), and \(p \land \neg p\):
+    \begin{center}
+    \resizebox{0.3\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|}
+    \hline
+    $p$ & $\neg p$ & $p \land \neg p$ \\
+    \hline
+    T & F & F \\
+    F & T & F \\
+    \hline
+    \end{tabular}%
+    }
+    \end{center}
+}
+
+
+\slide{Example}{
+    If \textbf{t} is a tautology and \textbf{c} is a contradiction, it can be shown that \(p \land t \equiv p\)
+    and \(p \land c \equiv c\).
+
+    \begin{center}
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $p$ & $t$ & $p \wedge t$ & $p$ & $c$ & $p \wedge c$ \\ \hline
+    T & T & T & T & F & F \\ \hline
+    F & T & F & F & F & F \\ \hline
+    \end{tabular}%
+    }
+    \end{center}
+
+    As evident, \(p \land t \equiv p\) and \(p \land c \equiv c\).
+}
+
+
+\subsection{Logical Equivalence Theorems}
+
+\slide{Theorems}{
+    Given any statement variables \(p\), \(q\), and \(r\), a tautology \(t\) and a contradiction \(c\), 
+    the following logical equivalences hold.
+
+    \thm{
+    \textbf{Commutative Laws}
+    \[p \land q \equiv q \land p\]
+    \[p \lor q \equiv q \lor p \]}
+
+    \thm{
+    \textbf{Associative Laws}
+    \[(p \land q) \land r \equiv p \land (q \land r)\]
+    \[(p \lor q) \lor r \equiv p \lor (q \lor r)\]}
+}
+
+
+\slide{Theorems}{
+    \thm{
+    \textbf{Distributive Laws}
+    \[p \land (q \lor r) \equiv (p \land q) \lor (p \land r)\]
+    \[p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)\]}
+
+    \thm{
+    \textbf{Identity Laws}
+    \[p \land t \equiv p\]
+    \[p \lor c \equiv p\]}
+}
+
+
+\slide{Theorems}{
+    \thm{
+    \textbf{Negation Laws}
+    \[p \lor \neg p \equiv t\]
+    \[p \land \neg p \equiv c\]}
+
+    \thm{
+    \textbf{Double Negative Law}
+    \[\neg (\neg p) \equiv p\]}
+
+    \thm{
+    \textbf{Idempotent Laws}
+    \[p \land p \equiv p\]
+    \[p \lor p \equiv p\]}
+}
+
+
+\slide{Theorems}{
+    \thm{
+    \textbf{Universal Bound Laws}
+    \[p \lor t \equiv t\]
+    \[p \land c \equiv c\]}
+
+    \thm{
+    \textbf{De Morgan's Laws}
+    \[\neg (p \land q) \equiv \neg p \lor \neg q\]
+    \[\neg (p \lor q) \equiv \neg p \land \neg q\]}
+}
+
+
+\slide{Theorems}{
+    \thm{
+    \textbf{Absorption Laws}
+    \[p \land (p \lor q) \equiv p\]
+    \[p \lor (p \land q) \equiv p\]}
+
+    \thm{
+    \textbf{Negations of Tautologies and Contradictions}
+    \[\neg t \equiv c\]
+    \[\neg c \equiv t\]}
 }
