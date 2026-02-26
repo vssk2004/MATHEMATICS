@@ -3,17 +3,170 @@
 
 \subsection{Negations of Quantified Statements}
 
+\slide{Negation of Universal Quantifier}{
+    Consider the proposition ``All roads lead to Rome.'' Many people would say that the negation is
+    ``No road leads to Rome.'' However, this is not true.
+
+    If even one road does not lead to Rome, then the sweeping statement that \emph{all} roads
+    lead to Rome is false.
+
+    Therefore, a correct negation is ``It is not the case that all roads lead to Rome.'' Equivalently,
+    we can also say that ``There is a road that does not lead to Rome.''
+    Formally, the negation is ``There exists at least one road that does not lead to Rome.''
+}
+
+
+\slide{Negation of Universal Quantifier}{
+    \thm{The negation of a statement of the form
+    \[\forall x \in D, P(x)\]
+    is logically equivalent to a statement of the form
+    \[\exists x \in D \text{ such that } \neg P(x).\]
+    Symbolically,
+    \[\neg\left[\forall x \in D, P(x)\right] \equiv \exists x \in D \text{ such that } \neg P(x).\]
+    }
+}
+
+
+\slide{Negation of Existential Quantifier}{
+    Consider the proposition ``A student in this class has taken Calculus.''
+    One might be tempted to say that the negation is ``All students in the class have taken
+    Calculus.'' However, this is not true.
+
+    If no student in the class has taken Calculus, then the sweeping statement that \emph{at least one}
+    student has taken Calculus is false.
+
+    Therefore, a correct negation is ``It is not the case that
+    a student in this class has taken Calculus.'' Equivalently, we say that ``No student
+    in this class has taken Calculus.''
+    Formally, the negation is ``All students in the class have not taken Calculus.''
+}
+
+
+\slide{Negation of Existential Quantifier}{
+    \thm{The negation of a statement of the form
+    \[\exists x \in D \text{ such that } Q(x)\]
+    is logically equivalent to a statement of the form
+    \[\forall x \in D, \neg Q(x).\]
+    Symbolically,
+    \[\neg \left[\exists x \in D \text{ such that } Q(x)\right] \equiv \forall x \in D, \neg Q(x).\]
+    }
+}
+
+
+\slide{Examples}{
+    Rewrite the following statements formally. Then write their negations.
+    \begin{enumerate}
+        \item No politicians are honest.
+        \item The number 1,357 is not divisible by any integer between 1 and 37.
+    \end{enumerate}
+
+    \underline{Solution}:\\[0.5em]
+    \begin{enumerate}
+        \item No politicians are honest.\\
+        \(\Rightarrow\) For all politicians \(p\), there is no honest \(p\).\\
+        \(\Rightarrow \forall p \in P, \text{ there is no honest } p.\)\\
+        Negation is: \(\exists p \in P \text{ such that } p \text{ is honest.}\)
+
+        \item The number 1,357 is not divisible by any integer between 1 and 37.\\
+        \(\Rightarrow \forall x \in \{1, 2, 3, \dots, 37\}, \text{ 1,357 is not divisible by } x.\)\\
+        Negation is: \(\exists x \in \{1, 2, 3, \dots, 37\} \text{ such that 1,357 is divisible by } x.\)
+    \end{enumerate}
+}
+
+
+\slide{Negations Made Easy!}{
+    An easier way to remember the negation of a quantified statement is to think of the negation
+    like an operator (which it is) such as \(-\).
+
+    For instance, \(-(5-2) = -5+2 = -3\). Similarly, we apply the distributive property
+    when we see the negation operator.
+
+    \[\neg \left[\forall x \ P(x)\right] = \exists x \ \neg P(x)\]
+    \[\neg \left[\forall x \ \neg P(x)\right] = \exists x \ P(x)\]
+    \[\neg \left[\exists x \ Q(x)\right] = \forall x \ \neg Q(x)\]
+    \[\neg \left[\exists x \ \neg R(x)\right] = \forall x \ R(x)\]
+}
+
 
 \subsection{Negations of Universal Conditional Statements}
+
+\slide{Negation of Universal Conditional Statements}{
+    Recall that a conditional proposition \(p \to q\) can be rewritten as \(\neg p \lor q\).
+    Therefore, we can find the negation of a universally quantified conditional statement
+    relatively easily.
+
+    \[\neg \left[\forall x, P(x) \to Q(x)\right] \equiv \exists x \text{ such that } \neg \left(P(x) \to Q(x)\right)\]
+    \[\neg \left(P(x) \to Q(x)\right) \equiv \neg \left(\neg P(x) \lor Q(x)\right) \equiv P(x) \land \neg Q(x)\]
+
+    \[\neg \left[\forall x, P(x) \to Q(x)\right] \equiv \exists x \text{ such that } \left(P(x) \land \neg Q(x)\right)\]
+}
 
 
 \subsection{Relation among \texorpdfstring{\(\forall\), \(\exists\), \(\land\), and \(\lor\)}{}}
 
+\slide{Relation among \texorpdfstring{\(\forall\), \(\exists\), \(\land\), and \(\lor\)}{}}{
+    Suppose that the domain of \(x\) is \(D = \{x_1, x_2, \dots, x_n\}\)
+    \[\forall x \in D, P(x) \equiv P(x_1) \land P(x_2) \land \dots \land P(x_n).\]
+    \[\exists x \text{ such that } Q(x) \equiv Q(x_1) \lor Q(x_2) \lor \dots \lor Q(x_n).\]
+}
+
 
 \subsection{Vacuous Truth of Universal Statements}
+
+\slide{Vacuous Truth of Universal Statements}{
+    Consider a room with no balloons. Now, consider the statement:
+    \begin{center}
+        ``All the balloons in the room are blue.''
+    \end{center}
+    Is this statement true or false? The statement is false if, and only if, its negation is true.
+    Its negation is:
+    \begin{center}
+        ``There exists a balloon in the room that is not blue.''
+    \end{center}
+    The only way this negation can be true is for there to actually be a non-blue balloon in the
+    room, and there is not! Hence the negation is false, and so the statement is true ``by default.''
+}
+
+
+\slide{Vacuous Truth of Universal Statements}{
+    In general, a statement of the form
+    \[\forall x \in D, \text{ if } P(x) \text{ then } Q(x)\]
+    is called \textbf{vacuously true} or \textbf{true by default} if, and only if, \(P(x)\) is false for every \(x\) in \(D\).
+
+    In mathematics, the phrase ``in general'' signals that what is to follow is a generalization of
+    an example that always holds true.
+}
 
 
 \subsection{Variants of Universal Conditional Statements}
 
+\slide{Variants of Universal Conditional Statements}{
+    Consider a statement of the form \(\forall x \in D\), if \(P(x)\) then \(Q(x)\).
+
+    \begin{enumerate}
+        \item Its \textbf{contrapositive} is the statement 
+        \(\forall x \in D\), if \(\sim Q(x)\) then \(\sim P(x)\).
+        \item Its \textbf{converse} is the statement 
+        \(\forall x \in D\), if \(Q(x)\) then \(P(x)\).
+        \item Its \textbf{inverse} is the statement 
+        \(\forall x \in D\), if \(\sim P(x)\) then \(\sim Q(x)\).
+    \end{enumerate}
+
+    A universal conditional statement is logically equivalent to its contrapositive.
+}
+
 
 \subsection{Necessary and Sufficient Conditions, Only If}
+
+\slide{Necessary and Sufficient Conditions, Only If}{
+``\(\forall x\), \(r(x)\) is a \textbf{sufficient condition} for \(s(x)\)'' 
+means \\ ``\(\forall x\), if \(r(x)\) then \(s(x)\).''
+
+``\(\forall x\), \(r(x)\) is a \textbf{necessary condition} for \(s(x)\)'' 
+means \\ ``\(\forall x\), if \(\sim r(x)\) then \(\sim s(x)\)'' or, equivalently, 
+``\(\forall x\), if \(s(x)\) then \(r(x)\).''
+
+``\(\forall x\), \(r(x)\) \textbf{only if} \(s(x)\)'' 
+means \\ ``\(\forall x\), if \(\sim s(x)\) then \(\sim r(x)\)'' or, equivalently, 
+``\(\forall x\), if \(r(x)\) then \(s(x)\).''
+}

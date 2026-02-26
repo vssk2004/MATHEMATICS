@@ -3,17 +3,288 @@
 
 \subsection{Predicates}
 
+\slide{Proposition vs. Predicate}{
+    Consider the following:
+    \begin{enumerate}
+        \item[(1)] \(5 + 5 = 11\)
+        \item[(2)] \(x^2 = 16\)
+    \end{enumerate}
 
-\subsection{Universal Quantifier}
+    In the list above, \((1)\) is a proposition, but \((2)\) is not. Why?
+
+    It's because \((2)\) may be either true or false depending on the value of \(x\).
+}
 
 
-\subsection{Existential Quantifier}
+\slide{Predicate}{
+    In grammar, `predicate' refers to the part of a sentence that gives information
+    about the subject.
+    
+    The predicate is the part of the sentence from which the subject has been removed.
+    In logic, predicates generally have two parts.
+
+    Consider the statement ``\(x\) is greater than 3.'' The first part, the variable \(x\), is the subject
+    of the statement. The second part—the predicate, “is greater than 3”—refers to a property that
+    the subject of the statement can have.
+
+    We can denote the statement “\(x\) is greater than 3” by \(P(x)\), where \(P\) denotes the
+    predicate “is greater than 3” and \(x\) is the variable. Once a value has been assigned to the
+    variable \(x\), the statement \(P(x)\) (also called the propositional function) becomes a
+    proposition and has a truth value.
+}
+
+
+\slide{Predicate}{
+    \dfn{A \textbf{predicate} is a sentence that contains a finite number of variables and becomes
+    a proposition when specific values are substituted for the variables.}
+    
+    The \emph{domain} of a predicate variable is the set of all values that may be substituted in place of the variable.
+
+    The \emph{truth set} of a predicate, \(P(x)\), is the set of all elements in its domain that make \(P(x)\) true
+    when they are substituted for \(x\).
+}
+
+
+\slide{Example}{
+    Let \(A(c,n)\) denote the statement ``Computer \(c\) is connected to network \(n\),'' 
+    where \(c\) is a variable representing a computer and \(n\) is a variable 
+    representing a network. Suppose that the computer MATH1 is connected 
+    to network CAMPUS2, but not to network CAMPUS1. What are the values of 
+    \(A(\text{MATH1}, \text{CAMPUS1})\) and \(A(\text{MATH1}, \text{CAMPUS2})\)?
+
+    \underline{Solution}:\\[0.5em]
+    \(A(\text{MATH1}, \text{CAMPUS1}) = \text{False}\)\\
+    \(A(\text{MATH1}, \text{CAMPUS2}) = \text{True}\).
+}
+
+
+\subsection{Quantifiers}
+
+\slide{Quantifiers}{
+    A propositional function (predicate) \(P(x)\) is not a proposition until it has a truth value.
+    Until now, we could convert a propositional function into a proposition by assigning a value to the variable.
+
+    Now, we will convert a propositional function into a proposition using \textbf{quantifiers}.
+
+    The two most widely used quantifiers are:
+    \begin{enumerate}
+        \item[(1)] Universal Quantifier
+        \item[(2)] Existential Quantifier
+    \end{enumerate}
+}
+
+
+\slide{Universal Quantifier}{
+    The symbol \(\forall\) is called the universal quantifier. Depending on the context, it is read as
+    either “for every” or “for each” or “for all.”
+
+    For example, another way to express the sentence “All human beings are mortal” is to write:
+    \[\forall \text{ humans } x, x \text{ is mortal.}\]
+
+    If you let \(H\) be the set of all human beings, then you can symbolize the statement more formally by writing:
+    \[\forall x \in H, x \text{ is mortal.}\]
+}
+
+
+\slide{Universal Quantifier}{
+    \dfn{Let \(P(x)\) be a predicate and let \(D\) be the domain of the variable \(x\). The \textbf{universal quantification} of \(P(x)\) is the statement
+    \[\forall x \in D, \ P(x).\]
+    This tells us that the proposition \(P(x)\) must be true \emph{for all} values of \(x\) in the domain \(D\).}
+}
+
+
+\slide{Example 1}{
+    Let \(P(x)\) be the statement \(x+1 > x\). What is the truth value of the quantification \(\forall x \in \mathbb{R}, P(x)\)?
+
+    \underline{Solution}:\\[0.5em]
+    The predicate \(P(x)\) is \(x+1 > x\). If \(x\) is subtracted from both sides, this is equivalent to \(1 > 0\).
+    Needless to say, \(1 > 0\) is true \(\forall x \in \mathbb{R}\).
+
+    Therefore, truth value of the quantification \(\forall x \in \mathbb{R}, P(x)\) is true.
+}
+
+
+\slide{Example 2}{
+    Let \(Q(x)\) be the statement \(x < 2\). What is the truth value of the quantification \(\forall x \in \mathbb{R}, Q(x)\)?
+
+    \underline{Solution}:\\[0.5em]
+    The predicate \(Q(x)\) is \(x < 2\). The domain of \(x\) is the set of all real numbers.
+    If the domain is \(\mathbb{R}\), then there exists at least one real number \(x\)
+    whose value is less than 2.
+
+    A \emph{counterexample} to the quantification \(\forall x \in \mathbb{R}, Q(x)\) is \(x = 0\).
+
+    Therefore, truth value of the quantification \(\forall x \in \mathbb{R}, Q(x)\) is false.
+}
+
+
+\slide{Existential Quantifier}{
+    The symbol \(\exists\) denotes “there exists” and is called the existential quantifier.
+    For example, the sentence “There is a student in CS50” can be written as:
+    \[\exists \text{ a person } p \text{ such that } p \text{ is a student in CS50.}\]
+
+    If we let \(P\) be the set of all people, then we can symbolize the statement more formally by writing:
+    \[\exists p \in P \text{ such that } p \text{ is a student in CS50.}\]
+}
+
+
+\slide{Existential Quantifier}{
+    \dfn{Let \(P(x)\) be a predicate and let \(D\) be the domain of the variable \(x\). The \textbf{existential
+    quantification} of \(P(x)\) is the statement
+    \[\exists x \in D \text{ such that } P(x).\]
+    This tells us that the proposition \(P(x)\) is true for at least one value of \(x\) in the domain \(D\).}
+}
+
+
+\slide{Example 1}{
+    Let \(P(x)\) denote the statement \(x > 3\). What is the truth value of the quantification \(\exists x \in \mathbb{R}, P(x)\)?
+
+    \underline{Solution:}\\[0.5em]
+    The predicate \(P(x)\) is \(x > 3\). We need to check if there exists at least one number \(x\) in the set of all real numbers
+    that satisfies the predicate.
+
+    Needless to say, an \(x \in \mathbb{R}\) does exist that satisfies \(x > 3\), like \(x = 4\).
+
+    Therefore, the truth value of the quantification \(\exists x \in \mathbb{R}, P(x)\) is true.
+}
+
+
+\slide{Example 2}{
+    Let \(Q(x)\) denote the statement \(x = x+1\). What is the truth value of the quantification \(\exists x \in \mathbb{R}, Q(x)\)?
+
+    \underline{Solution:}\\[0.5em]
+    The predicate \(Q(x)\) is \(x = x+1\). If \(x\) is subtracted from both sides, we have \(0 = 1\).
+    This is not true \(\forall x \in \mathbb{R}\).
+
+    Therefore, the truth value of the quantification \(\exists x \in \mathbb{R}, Q(x)\) is false.
+}
+
+
+\slide{Quantifiers over Finite Domains}{
+    When the domain of a quantifier is finite, that is, when all its elements can be listed, quantified
+    statements can be expressed using propositional logic.
+
+    In particular, when the elements of the domain \(D\) are \(x_1, x_2, \dots, x_n\), the universal quantification \(\forall x \in D, \ P(x)\) is the
+    same as the conjunction: \(P(x_1) \land P(x_2) \land \dots \land P(x_n)\).
+
+    Similarly, when the elements of the domain \(D\) are \(x_1, x_2, \dots, x_n\), the existential quantification \(\exists x \in D \text{ such that } Q(x)\)
+    is the same as the disjunction: \(P(x_1) \lor P(x_2) \lor \dots \lor P(x_n)\).
+}
+
+
+\slide{Summary of Quantifiers}{
+\[\resizebox{1\textwidth}{!}{
+$\begin{array}{|c|c|}
+\hline
+\textbf{Universal Quantifier} & \textbf{Existential Quantifier} \\
+\hline
+\forall & \exists \\
+\hline
+\text{``For all''} & \text{``There exists''} \\
+\hline
+\textit{When true?} &
+\textit{When true?} \\
+\text{When } P(x) \text{ is true for every } x \text{ in the domain} &
+\text{There is an } x \text{ in the domain for which } P(x) \text{ is true} \\
+\hline
+\textit{When false?} &
+\textit{When false?} \\
+\text{There is an } x \text{ in the domain for which } P(x) \text{ is false} &
+\text{When } P(x) \text{ is false for every } x \text{ in the domain} \\
+\hline
+\forall x\, P(x) \equiv P(x_1)\land P(x_2)\land \cdots \land P(x_n) &
+\exists x\, P(x) \equiv P(x_1)\lor P(x_2)\lor \cdots \lor P(x_n) \\
+\hline
+\end{array}$}
+\]
+}
 
 
 \subsection{Universal Conditional Statements}
 
+\slide{Universal Conditional Statements}{
+    One of the most important form of mathematical statements is the \textbf{universal
+    conditional statement}. It has the form:
+    \[\forall x, \text{ if } P(x) \text{ then } Q(x).\]
 
-\subsection{Universal and Existential Statements}
+    More formally, it is written:
+    \[\forall x, P(x) \to Q(x).\]
+    
+    It is common to omit explicit identification of the domain of predicate variables in
+    universal conditional statements.
+}
+
+
+\slide{Examples}{
+    Rewrite the following statements more formally:
+    \begin{enumerate}
+        \item[(1)] If a real number is an integer, then it is a rational number.
+        \item[(2)] All bytes have eight bits.
+    \end{enumerate}
+
+    \underline{Solution}:\\[0.5em]
+    \begin{enumerate}
+        \item[(1)] \(\forall x, \text{ if } x \in \mathbb{Z} \text{, then } x \in \mathbb{Q}.\)
+        \item[(2)] \(\forall b, \text{ if } b \text{ is a byte, then } b \text{ has 8 bits.}\)
+    \end{enumerate}
+}
 
 
 \subsection{Implicit Quantification}
+
+\slide{Equivalent Universal Statements}{
+    Consider the statement:
+    \[\text{All squares are rectangles.}\]
+
+    Its universal quantification is:
+    \[\forall \text{ squares } x, \; x \text{ is a rectangle.}\]
+
+    This can also be written as a universal conditional statement:
+    \[\forall x, \text{ if } x \text{ is a square, then } x \text{ is a rectangle.}\]
+}
+
+
+\slide{Implicit Quantification}{
+    Consider the statement:
+    \[\text{If a number is an integer, then it is a rational number.}\]
+
+    This statement is an example of \emph{implicit} universal quantification.
+    Now, we can convert this conditional statement into a universal statement.
+
+    \[\forall x, \text{ if } x \in \mathbb{Z} \text{ then } x \in \mathbb{Q}.\]
+
+    Mathematicians use a double arrow to indicate implicit quantification:
+    \[x \in \mathbb{Z} \; \Rightarrow \; x \in \mathbb{Q}.\]
+}
+
+
+\slide{Implicit Quantification}{
+    \dfn{Let \(P(x)\) and \(Q(x)\) be predicates and suppose the common domain of \(x\) is \(D\).
+    \begin{itemize}
+        \item The notation \(P(x) \Rightarrow Q(x)\) means that every element in the truth set of \(P(x)\) is in the truth set of \(Q(x)\), or, equivalently, \(\forall x,\; P(x) \to Q(x)\).
+        
+        \item The notation \(P(x) \Leftrightarrow Q(x)\) means that \(P(x)\) and \(Q(x)\) have identical truth sets, or, equivalently, \(\forall x,\; P(x) \leftrightarrow Q(x)\).
+    \end{itemize}}
+}
+
+
+\slide{Example}{
+Let
+\[
+\begin{aligned}
+Q(n) &\text{ be ``}n \text{ is a factor of } 8,\text{''} \\
+R(n) &\text{ be ``}n \text{ is a factor of } 4,\text{''} \\
+S(n) &\text{ be ``}n < 5 \text{ and } n \ne 3.\text{''}
+\end{aligned}
+\]
+
+Suppose the domain of \(n\) is \(\mathbb{Z}^+\). 
+Use the \(\Rightarrow\) and \(\Leftrightarrow\) symbols to indicate true relationships among \(Q(n)\), \(R(n)\), and \(S(n)\).
+
+\underline{Solution}:\\[0.5em]
+\begin{itemize}
+    \item \(R(n) \Rightarrow Q(n)\).
+    \item \(S(n) \Rightarrow Q(n)\).
+    \item \(R(n) \Leftrightarrow S(n)\).
+\end{itemize}
+}

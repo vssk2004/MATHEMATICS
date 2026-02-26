@@ -1,1 +1,149 @@
-\section{Multiple Quantifiers}
+\section{Multiple or Nested Quantifiers}
+
+
+\subsection{Interpreting Statements with Multiple Quantifiers}
+
+\slide{Meaning of Multiple Quantifiers}{
+    Suppose \(P(x,y)\) denotes ``\(xy = yx\)'' (the commutative property). Assume that the domain is the set
+    of real numbers. Then, the statement:
+    \[\forall x \forall y \ P(x,y)\]
+    means ``for all real numbers \(x\) and for all real numbers \(y\), \(xy = yx\).''
+    Similarly,
+    \[\forall y \forall x \ P(x,y)\]
+    means ``for all real numbers \(y\) and for all real numbers \(x\), \(xy = yx\).''
+
+    Fortunately, the order does \emph{not} matter in this case. However, the order
+    will matter when two \emph{different} quantifiers are used in the same statement.
+}
+
+
+\slide{Meaning of Multiple Quantifiers}{
+    Consider the true proposition ``All real numbers have an additive inverse.''
+    \begin{enumerate}
+        \item[(1)] What does \(\forall x \in \mathbb{R} \quad \exists y \in \mathbb{R} \quad (x+y = 0)\) mean?
+        \item[(2)] What does \(\exists y \in \mathbb{R} \quad \forall x \in \mathbb{R} \quad (x+y = 0)\) mean?
+    \end{enumerate}
+
+    Here, (1) means ``for all real numbers \(x\), there exists a real number \(y\) such that,
+    \(y\) is the additive inverse of \(x\).''
+
+    Here, (2) means ``there exists a real number \(y\) such that, for all real numbers \(x\),
+    \(y\) is the additive inverse of \(x\).''
+
+    It is imperative to note that (1) and (2) do not mean the same thing.
+}
+
+
+\slide{Truth with Multiple Similar Quantifiers}{
+    If you want to establish the truth of a statement of the form
+    \[
+    \forall x \in D \quad \forall y \in E \quad P(x,y)
+    \]
+    your challenge is to allow someone else to pick any element \(x \in D\) and
+    any element \(y \in E\), and then you must show that \(P(x,y)\) holds for
+    that arbitrary pair.
+
+    If you want to establish the truth of a statement of the form
+    \[
+    \exists x \in D \quad \exists y \in E \quad P(x,y)
+    \]
+    your job is to find one particular \(x \in D\) and one particular
+    \(y \in E\) for which \(P(x,y)\) is true.   
+}
+
+
+\slide{Truth with Multiple Different Quantifiers}{
+    If you want to establish the truth of a statement of the form
+    \[
+    \forall x \in D \quad \exists y \in E \quad P(x,y)
+    \]
+    your challenge is to allow someone else to pick whatever element \(x \in D\) they wish
+    and then you must find an element \(y \in E\) that ``works'' for that particular \(x\).
+    You are allowed to find a different value of \(y\) for each different \(x\) you are given.
+
+    If you want to establish the truth of a statement of the form
+    \[
+    \exists x \in D \text{ such that } \forall y \in E, \, P(x,y)
+    \]
+    your job is to find one particular \(x \in D\) that will ``work'' no matter what
+    \(y \in E\) anyone might choose to challenge you with.
+    You are not allowed to change your \(x\) once you have specified it initially.
+}
+
+
+\slide{Universal and Existential Quantifiers}{
+    Consider the true proposition ``All real numbers have an additive inverse.''
+    \begin{enumerate}
+        \item[(1)] Is \(\forall x \in \mathbb{R} \quad \exists y \in \mathbb{R} \quad (x+y = 0)\) true?
+        \item[(2)] Is \(\exists y \in \mathbb{R} \quad \forall x \in \mathbb{R} \quad (x+y = 0)\) true?
+    \end{enumerate}
+    
+    We can say that (1) is true as it means that we are allowed to find a different value of \(y\) for
+    each different \(x\) we are given.
+
+    However, (2) is not true as it means that we have to find one value of \(y\) that satisfies
+    \(x + y = 0\), as \(x\) changes.
+}
+
+
+\subsection{Negation of Statements with Multiple Quantifiers}
+
+\slide{Negation of Statements with Multiple Quantifiers}{
+    To find the negation of a statement with multiple quantifiers, we can use the same rules
+    that we used to negate simpler quantified statements. Suppose the domain of \(x\) is \(D\),
+    then recall that:
+    \[\neg (\forall x \ P(x)) \equiv  \exists x \ \neg P(x)\]
+    and
+    \[\neg (\exists x \ P(x)) \equiv  \forall x \ \neg P(x).\]
+
+    To find the negation of a statement with multiple quantifiers we apply the negation in steps
+    like we do with an operator like \((-)\). For instance \[-(5 + 2 - 3) = -5 -(2-3) = -5 - 2 + 3.\]
+}
+
+
+\slide{Negation of Statements with Multiple Quantifiers}{
+\[\begin{aligned}
+    \neg \left[\forall x \in D \quad \forall y \in E \quad P(x,y)\right] &\equiv  \exists x \in D \quad \neg \left[\forall y \in E \quad P(x,y)\right] \\
+    &\equiv  \exists x \in D \quad \exists y \in E \quad \neg P(x,y)
+\end{aligned}\]
+
+\[\begin{aligned}
+    \neg \left[\forall x \in D \quad \exists y \in E \quad P(x,y)\right] &\equiv  \exists x \in D \quad \neg \left[\exists y \in E \quad P(x,y)\right] \\
+    &\equiv  \exists x \in D \quad \forall y \in E \quad \neg P(x,y)
+\end{aligned}\]
+
+\[\begin{aligned}
+    \neg \left[\exists x \in D \quad \forall y \in E \quad P(x,y)\right] &\equiv  \forall x \in D \quad \neg \left[\forall y \in E \quad P(x,y)\right] \\
+    &\equiv  \forall x \in D \quad \exists y \in E \quad \neg P(x,y)
+\end{aligned}\]
+
+\[\begin{aligned}
+    \neg \left[\exists x \in D \quad \exists y \in E \quad P(x,y)\right] &\equiv  \forall x \in D \quad \neg \left[\exists y \in E \quad P(x,y)\right] \\
+    &\equiv  \forall x \in D \quad \forall y \in E \quad \neg P(x,y)
+\end{aligned}\]
+}
+
+
+\subsection{Formal Logical Notation}
+
+\slide{Formal Logical Notation}{
+    The formal notation for logic involves using predicates to describe all properties of variables
+    and omitting the words ``such that'' in existential statements.
+
+    ``\(\forall x \text{ in } D\), \(P(x)\)'' can be written as ``\(\forall x \; (x \in D \to P(x))\).''
+
+    ``\(\exists x \text{ in } D\) such that \(P(x)\)'' can be written as ``\(\exists x \; (x \in D \land P(x))\).''
+}
+
+
+\slide{Example}{
+    Translate the statement “Every real number except zero has a multiplicative inverse.”
+    (A multiplicative inverse of a real number \(x\) is a real number \(y\) such that \(xy = 1\).)
+
+    \underline{Solution}:\\[0.5em]
+    ``For every real \(x\), there exists \(y\), such that \(xy = 1.\)''
+    \[\forall x \in \mathbb{R} - \{0\}, \exists y \in \mathbb{R} - \{0\} \text{ such that } xy = 1.\]
+    Here, \(\exists y\) such that \(P(x,y)\) \(\equiv \exists y\left[y \in D \land P(x,y)\right]\).\\
+    Furthermore, \(\forall x \ P(x,y)\) \(\equiv \forall x \left[x \in D \to P(x,y)\right]\).
+    \[\forall x \left[(x \in \RN \land x \not= 0) \to \exists y (xy = 1)\right].\]
+}

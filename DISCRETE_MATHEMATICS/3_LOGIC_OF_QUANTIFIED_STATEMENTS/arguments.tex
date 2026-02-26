@@ -1,1 +1,173 @@
 \section{Arguments with Quantified Statements}
+
+
+\subsection{Rules of Inference for Quantified Statements}
+
+\slide{Rules of Inference for Quantified Statements}{
+    We have discussed rules of inference for propositions. We will now describe some important
+    rules of inference for statements involving quantifiers. These rules of inference are used extensively in mathematical arguments.
+
+    Here, we will discuss four rules:
+    \begin{enumerate}
+        \item[(1)] Universal Instantiation
+        \item[(2)] Universal Generalization
+        \item[(3)] Existential Instantiation
+        \item[(4)] Existential Generalization
+    \end{enumerate}
+}
+
+
+\slide{Universal Instantiation}{
+    \dfn{\textbf{Universal instantiation} is the rule of inference used to conclude that \(P(c)\) is true, where \(c\)
+    is a particular member of the domain, given the premise \(\forall x P(x)\).}
+
+    Universal instantiation means that the truth of a property in a particular case
+    follows as a special instance of its more general or universal truth.
+    Consider one of the most famous  examples of universal instantiation:
+    \[\begin{aligned}
+    &\text{All men are mortal.} \\
+    &\text{Socrates is a man.} \\
+    \therefore \ &\text{Socrates is mortal.}
+    \end{aligned}\]
+}
+
+
+\slide{Universal Generalization}{
+    \dfn{\textbf{Universal generalization} is the rule of inference that states that \(\forall x P(x)\) is true, given the
+    premise that \(P(c)\) is true for all elements \(c\) in the domain.}
+
+    If you prove something without assuming anything special about the element, you may conclude it holds universally.
+
+    The element \(c\) that we select must be an arbitrary, and not a specific, element of the domain. We have no control over \(c\) and cannot
+    make any other assumptions about \(c\) other than it comes from the domain.
+
+    For example, we can prove that \(x + 0 = x\) for any real number. To do so, we make no specific assumptions about \(x\).
+}
+
+
+\slide{Existential Instantiation}{
+    \dfn{\textbf{Existential instantiation} is the rule that allows us to conclude that there is an element \(c\) in
+    the domain for which \(P(c)\) is true if we know that \(\exists xP(x)\) is true.}
+
+    Usually we have no knowledge of what \(c\) is, only that it exists. However, because it exists, we may give it a name (\(c\))
+    and continue our argument.
+}
+
+
+\slide{Existential Generalization}{
+    \dfn{\textbf{Existential generalization} is the rule of inference that is used to conclude that \(\exists xP(x)\) is
+    true when a particular element \(c\) with \(P(c)\) true is known.}
+
+    If we know one element \(c\) in the domain for which \(P(c)\) is true, then we know that \(\exists xP(x)\) is true.
+}
+
+
+\slide{Summary of Rules of Inference for Quantified Statements}{
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Universal Instantiation} & \textbf{Universal Generalization} \\
+    \hline
+    \(\forall x P(x)\) & \(P(c)\) for all \(c\) in the domain \\
+    \(\therefore P(c)\) & \(\therefore \forall x P(x)\) \\
+    \hline
+    \textbf{Existential Instantiation} & \textbf{Existential Generalization} \\
+    \hline
+    \(\exists x P(x)\) & \(P(c)\) for some \(c\) in the domain \\
+    \(\therefore P(c)\) & \(\therefore \exists x P(x)\) \\
+    \hline
+\end{tabular}
+\end{center}
+}
+
+
+\slide{Example 1}{
+    Consider the following exercise:
+    \begin{center}
+        Show that the premises “Everyone in this discrete mathematics class has taken a course in
+        computer science” and “Marla is a student in this class” imply the conclusion “Marla has taken
+        a course in computer science.”
+    \end{center}
+
+    Suppose \(D(x)\) is ``\(x\) is in this discrete mathematics class,'' and let \(C(x)\) denote ``\(x\) has
+    taken a course in computer science.'' Then the premises are \(\forall x (D(x) \to C(x))\) and \(D(Marla)\).
+    The conclusion is \(C(Marla)\).
+
+    How do we get from the premises to the conclusion? We use rules of inference for quantified statements
+    and modus ponens.
+}
+
+
+\slide{Example 1}{
+\begin{tabular}{@{}p{0.4\linewidth} p{0.5\linewidth}@{}}
+\textbf{Step} & \textbf{Reason} \\[6pt]
+
+1.\ $\forall x (D(x) \rightarrow C(x))$ 
+& Premise \\[4pt]
+
+2.\ $D(\text{Marla}) \rightarrow C(\text{Marla})$ 
+& Universal Instantiation from (1) \\[4pt]
+
+3.\ $D(\text{Marla})$ 
+& Premise \\[4pt]
+
+4.\ $C(\text{Marla})$ 
+& Modus Ponens from (2) and (3)
+\end{tabular}
+}
+
+
+\subsection{Combining Rules of Inference for Propositions and Quantified Statements}
+
+\slide{Universal Modus Ponens}{
+    Note that in our argument in Example 1 we used both universal instantiation, a rule of inference
+    for quantified statements, and modus ponens, a rule of inference for propositional logic.
+
+    We will often need to use this combination of rules of inference. Because universal instantiation
+    and modus ponens are used so often together, this combination of rules is sometimes called
+    \textbf{universal modus ponens}.
+
+    \[\begin{aligned}
+        &\forall x (P(x) \to Q(x)) \\
+        &P(c) \\
+        \therefore \ &Q(c)
+    \end{aligned}\]
+}
+
+
+\slide{Example}{
+    Assume that “For all positive integers \(n\), if \(n\) is greater than 4, then \(n^2\) is less than \(2^n\)” is true.
+    Use universal modus ponens to show that \(100^2 < 2^{100}\).
+
+    \underline{Solution}:\\[0.5em]
+    Suppose that \(P(x)\) is ``\(x > 4\),'' and \(Q(x)\) is ``\(x^2 < 2^x\).'' Furthermore, let \(c = 100\).
+    Then by universal modus ponens:
+    \[\begin{aligned}
+        &\forall x (P(x) \to Q(x)) \\
+        &P(100) \\
+        \therefore \ &Q(100).
+    \end{aligned}\]
+}
+
+
+\slide{Universal Modus Tollens}{
+    Another useful combination of a rule of inference from propositional logic and a rule of inference for quantified
+    statements is \textbf{universal modus tollens}.
+
+    Universal modus tollens combines universal instantiation and modus tollens and can be expressed in the following way:
+    \[\begin{aligned}
+        &\forall x (P(x) \to Q(x)) \\
+        &\neg Q(c) \\
+        \therefore \ &\neg P(c)
+    \end{aligned}\]
+}
+
+
+\slide{Example}{
+    \[\begin{aligned}
+        &\text{All human beings are mortal.} \\
+        &\text{Zeus is not mortal.} \\
+        \therefore \ &\text{Zeus is not a human being.}
+    \end{aligned}\]
+}
